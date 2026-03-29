@@ -8,7 +8,7 @@ const app = express();
 
 // --- Middleware ---
 // Allow requests from your Vite frontend
-app.use(cors({ origin: 'http://localhost:5173' })); 
+app.use(cors());
 app.use(express.json());
 
 // --- Database Connection ---

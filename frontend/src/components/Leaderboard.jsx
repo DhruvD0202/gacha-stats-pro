@@ -11,17 +11,16 @@ export default function Leaderboard({ username, finalScore, counts, pity }) {
     // 1. Define the async function to save to the backend
     const saveScoreAndFetchLeaderboard = async () => {
       try {
-        // Send the player's data to your Node.js server
-        await axios.post('http://localhost:5000/api/leaderboard/save', {
+        // 🚀 UPDATED: Pointing POST request to your live Render server!
+        await axios.post('https://gacha-stats-pro.onrender.com/api/leaderboard/save', {
           username: username,
           score: finalScore,
           pityCounter: pity,
           inventory: counts 
         });
 
-        // 2. Fetch the updated global leaderboard from the database
-        // (We will write this GET route next if you don't have it yet!)
-        const response = await axios.get('http://localhost:5000/api/leaderboard');
+        // 🚀 UPDATED: Pointing GET request to your live Render server!
+        const response = await axios.get('https://gacha-stats-pro.onrender.com/api/leaderboard');
         
         const sortedPlayers = response.data.sort((a, b) => b.score - a.score);
         setRankedPlayers(sortedPlayers);
