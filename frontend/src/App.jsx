@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import GachaMachine from './components/GachaMachine';
-import StatsDashboard from './components/statsDashboard'; 
+import StatsDashboard from './components/StatsDashboard'; 
 import Login from './components/Login'; 
-import Leaderboard from './components/LeaderBoard'; 
+import Leaderboard from './components/Leaderboard'; 
 
 function App() {
   // --- User Auth & Game Limits State ---
